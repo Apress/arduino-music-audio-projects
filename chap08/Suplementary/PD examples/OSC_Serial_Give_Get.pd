@@ -1,0 +1,113 @@
+#N canvas 120 40 867 711 10;
+#X declare -lib mrpeach;
+#X obj 113 255 unpackOSC;
+#X obj 144 147 packOSC;
+#X obj 361 450 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 385 451 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 410 451 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 437 451 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 57 49 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 462 451 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 488 451 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 112 213 o.io.slipserial;
+#X obj 170 410 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 253 410 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 191 410 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 232 409 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 211 410 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 275 409 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 175 302 routeOSC /a /d;
+#X msg 199 170 devicename /dev/tty.usbmodem1451 \, baud 38400 \, pollintervall
+1;
+#X obj -11 72 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 136 49 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 214 48 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 291 47 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 370 47 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 448 46 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg -2 101 /w;
+#X obj 360 358 routeOSC /5 /4 /3 /2 /1 /0;
+#X msg 448 86 /led/0 \$1;
+#X msg 370 87 /led/1 \$1;
+#X msg 291 87 /led/2 \$1;
+#X msg 214 88 /led/3 \$1;
+#X msg 136 89 /led/4 \$1;
+#X msg 57 89 /led/5 \$1;
+#X text -35 50 Wink LED 0;
+#X text 273 227 Serial OSC Give Get Mike Cook 2014;
+#X text 182 557 Analogue Values;
+#X text 383 332 Digital Inputs;
+#X text 377 492 Digital Input state;
+#X text 178 336 Analogue Inputs;
+#X text 492 468 0;
+#X text 365 469 5;
+#X text 388 469 4;
+#X text 413 469 3;
+#X text 440 468 2;
+#X text 465 468 1;
+#X obj 156 357 routeOSC /5 /4 /3 /2 /1 /0;
+#X text 279 541 0;
+#X text 173 542 5;
+#X text 196 542 4;
+#X text 216 542 3;
+#X text 236 541 2;
+#X text 255 541 1;
+#X text 220 13 Digital Outputs;
+#X text 53 29 LED 5;
+#X text 132 29 LED 4;
+#X text 210 28 LED 3;
+#X text 287 27 LED 2;
+#X text 366 27 LED 1;
+#X text 444 26 LED 0;
+#X text 160 64;
+#X connect 0 0 16 0;
+#X connect 1 0 9 0;
+#X connect 6 0 31 0;
+#X connect 9 0 0 0;
+#X connect 16 0 44 0;
+#X connect 16 1 25 0;
+#X connect 17 0 9 1;
+#X connect 18 0 24 0;
+#X connect 19 0 30 0;
+#X connect 20 0 29 0;
+#X connect 21 0 28 0;
+#X connect 22 0 27 0;
+#X connect 23 0 26 0;
+#X connect 24 0 1 0;
+#X connect 25 0 2 0;
+#X connect 25 1 3 0;
+#X connect 25 2 4 0;
+#X connect 25 3 5 0;
+#X connect 25 4 7 0;
+#X connect 25 5 8 0;
+#X connect 26 0 1 0;
+#X connect 27 0 1 0;
+#X connect 28 0 1 0;
+#X connect 29 0 1 0;
+#X connect 30 0 1 0;
+#X connect 31 0 1 0;
+#X connect 44 0 10 0;
+#X connect 44 1 12 0;
+#X connect 44 2 14 0;
+#X connect 44 3 13 0;
+#X connect 44 4 11 0;
+#X connect 44 5 15 0;

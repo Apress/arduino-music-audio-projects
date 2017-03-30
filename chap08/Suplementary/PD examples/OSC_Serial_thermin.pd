@@ -1,0 +1,43 @@
+#N canvas 534 64 547 488 10;
+#X declare -lib mrpeach;
+#X obj 7 118 unpackOSC;
+#X obj 6 76 o.io.slipserial;
+#X obj -16 286 vsl 15 128 100 2000 0 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 0 1;
+#X obj 178 287 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 93 33 devicename /dev/tty.usbmodem1451 \, baud 38400 \, pollintervall
+1;
+#X text 42 454 Analogue Values;
+#X text 69 199 Analogue Inputs;
+#X text 26 434 0;
+#X text 142 439 1;
+#X obj 69 165 routeOSC /a;
+#X obj 52 326 osc~;
+#X obj 74 404 dac~;
+#X obj 74 357 *~;
+#X obj 50 220 routeOSC /0 /1;
+#X obj -22 246 print;
+#X obj 99 260 / 100;
+#X obj 107 294 pack 0 50;
+#X obj 105 325 line~;
+#X obj 30 266 pack 0 50;
+#X obj 50 294 line~;
+#X text 167 90 Serial OSC Theremin Mike Cook 2014;
+#X connect 0 0 9 0;
+#X connect 1 0 0 0;
+#X connect 4 0 1 1;
+#X connect 9 0 13 0;
+#X connect 10 0 12 0;
+#X connect 12 0 11 0;
+#X connect 12 0 11 1;
+#X connect 13 0 2 0;
+#X connect 13 0 14 0;
+#X connect 13 0 18 0;
+#X connect 13 1 3 0;
+#X connect 13 1 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 12 1;
+#X connect 18 0 19 0;
+#X connect 19 0 10 0;
